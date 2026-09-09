@@ -2327,3 +2327,44 @@ input[type="range"].range::-moz-range-thumb {
   .team-grid > :last-child,
   .stat-grid > :last-child { grid-column: auto; width: auto; }
 }
+
+/* About story image: fills its column on desktop, but capped on small screens
+   so it doesn't dominate the stacked layout. */
+@media (max-width: 768px) {
+  .story-image {
+    height: 260px !important;
+    object-position: center;
+  }
+}
+
+/* Social links at the foot of each leadership card. */
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-3);
+}
+.team-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.team-social a:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+/* Bios vary in length, so let the card stretch and pin the social row to the
+   bottom — the icons then line up across the whole row. */
+.team-card { display: flex; flex-direction: column; }
+.team-info { display: flex; flex-direction: column; flex: 1; }
+.team-info p { margin-bottom: 0; }
+.team-social { margin-top: auto; padding-top: var(--space-3); }
