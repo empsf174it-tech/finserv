@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | FINSERV</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i class="ph-fill ph-bank"></i> FINSERV<span>.</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger" aria-label="Open Menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
+      <button class="close-drawer" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow animate-fade-in" style="justify-content: center;">About FINSERV</div>
+        <h1 class="animate-slide-up">Banking built on <span class="text-gradient">trust</span></h1>
+        <p class="animate-slide-up delay-1">
+          Powered by technology, guided by people. Meet the team rebuilding everyday banking from the ground up.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 1: About / Story -->
+    <section>
+      <div class="container">
+        <div class="contact-grid">
+          <div class="story-copy animate-slide-up delay-2">
+            <div class="trust-badge">
+              <i class="ph-fill ph-sparkle" style="color: var(--accent-color)"></i> Our Story & Vision
+            </div>
+            <h2>Redefining modern banking</h2>
+            <p>At FINSERV, we believe your bank should work as hard as you do. Founded by financial engineers and
+              technology veterans, our mission is to eliminate the friction, delays, and hidden costs from traditional
+              banking.</p>
+
+            <ul class="account-features">
+              <li><i class="ph-fill ph-check-circle"></i> Regulated and fully compliant</li>
+              <li><i class="ph-fill ph-check-circle"></i> FDIC Insured up to $250,000*</li>
+              <li><i class="ph-fill ph-check-circle"></i> 24/7 dedicated fraud monitoring & AI defense</li>
+            </ul>
+          </div>
+          <div class="animate-slide-up delay-3">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800"
+              alt="Professional FINSERV office"
+              style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius); box-shadow: var(--shadow);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Core Values -->
+    <section style="background: var(--surface-color);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Core Principles</h2>
+          <p>The values that steer every line of code and customer interaction.</p>
+        </div>
+        <div class="card-grid">
+          <div class="value-card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600"
+              alt="Security by Design visual">
+            <i class="ph ph-shield-chevron card-icon"></i>
+            <h3>Security by Design</h3>
+            <p>We believe data protection is a human right. We apply zero-trust architecture and automated audit
+              protocols at every tier.</p>
+          </div>
+          <div class="value-card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600"
+              alt="Radical Transparency visual">
+            <i class="ph ph-eye card-icon"></i>
+            <h3>Radical Transparency</h3>
+            <p>No obscure terms, no deceptive fees. What you see is what you get, from compound APY to global transfer
+              exchange rates.</p>
+          </div>
+          <div class="value-card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600"
+              alt="Client First visual">
+            <i class="ph ph-users-three card-icon"></i>
+            <h3>Client-Centric Innovation</h3>
+            <p>Building high-speed financial tools backed by dedicated 24/7 human support whenever you need assistance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Impact & Milestones Stats -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Global Footprint & Trust</h2>
+          <p>Real numbers that represent our commitment to our community.</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-number">$14B+</div>
+            <div class="stat-label">Total Assets Protected</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">480K+</div>
+            <div class="stat-label">Active Global Members</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">99.99%</div>
+            <div class="stat-label">Platform Core Uptime</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">40+</div>
+            <div class="stat-label">Countries Supported</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Leadership Team -->
+    <section style="background: var(--surface-color);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Executive Leadership</h2>
+          <p>Seasoned fintech pioneers leading the revolution.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=facearea&facepad=3.5&q=80&w=500&h=620"
+                alt="Elena Vance - CEO">
+            </div>
+            <div class="team-info">
+              <h3>Elena Vance</h3>
+              <span class="team-role">Chief Executive Officer</span>
+              <p style="font-size: 0.85rem;">Former VP of Fintech Innovation with 15+ years of banking technology
+                leadership.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=3.5&q=80&w=500&h=620"
+                alt="Marcus Reynolds - CTO">
+            </div>
+            <div class="team-info">
+              <h3>Marcus Reynolds</h3>
+              <span class="team-role">Chief Technology Officer</span>
+              <p style="font-size: 0.85rem;">Distributed systems architect specializing in high-throughput cryptographic
+                security.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=facearea&facepad=3.5&q=80&w=500&h=620"
+                alt="Amara Okafor - Head of Risk & Compliance">
+            </div>
+            <div class="team-info">
+              <h3>Amara Okafor</h3>
+              <span class="team-role">Head of Risk & Compliance</span>
+              <p style="font-size: 0.85rem;">Regulatory strategist ensuring global compliance and institutional security
+                standards.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=3.5&q=80&w=500&h=620"
+                alt="David Chen - Head of Product">
+            </div>
+            <div class="team-info">
+              <h3>David Chen</h3>
+              <span class="team-role">Head of Product services</span>
+              <p style="font-size: 0.85rem;">Design lead focused on crafting frictionless, delight-driven digital
+                banking flows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: CTA -->
+    <section>
+      <div class="container">
+        <div class="calc-result-panel" style="text-align: center; align-items: center;">
+          <div class="res-label">Join us</div>
+          <h2 style="color: #fff; max-width: 18ch; margin-inline: auto;">Ready to build your financial future?</h2>
+          <p style="color: rgba(255,255,255,0.68); max-width: 46ch; margin: var(--space-2) auto var(--space-4);">
+            Join over 480,000 members who enjoy seamless, secure digital banking every day.
+          </p>
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="register.html" class="btn btn-accent btn-lg">Open an Account <i class="ph ph-arrow-right"></i></a>
+            <a href="accounts.html" class="btn btn-outline-light btn-lg">Explore Products</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand" style="margin-bottom: 16px;"><i class="ph-fill ph-bank"></i>
+            FINSERV<span>.</span></a>
+          <p style="font-size: 0.875rem;">Premium digital banking designed for the modern economy. Secure, fast, and
+            transparent.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="FINSERV on X"><i class="ph-fill ph-x-logo"></i></a>
+            <a href="#" aria-label="FINSERV on LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="FINSERV on Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="FINSERV on YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="accounts.html">Checking</a>
+            <a href="accounts.html">Savings</a>
+            <a href="accounts.html">Business</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="calculator.html">Calculator</a>
+            <a href="#">Help Center</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FINSERV Digital Bank. All rights reserved.</p>
+        <p>*FINSERV is a placeholder financial services brand. Not a real financial institution. Demo content only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

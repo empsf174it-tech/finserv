@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | FINSERV</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i class="ph-fill ph-bank"></i> FINSERV<span>.</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger" aria-label="Open Menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
+      <button class="close-drawer" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero / Error Section -->
+    <section class="page-hero" style="padding-bottom: var(--space-6);">
+      <div class="container" style="max-width: 650px;">
+        <i class="ph-fill ph-warning-circle animate-fade-in" style="font-size: 5rem; color: var(--accent-color); margin-bottom: var(--space-2);"></i>
+        <h1 class="animate-slide-up delay-1" style="font-size: clamp(3rem, 7vw, 5rem); margin-bottom: 0;">404</h1>
+        <h2 class="animate-slide-up delay-2" style="margin-bottom: var(--space-2);">Page Not Found</h2>
+        <p class="animate-slide-up delay-3" style="margin-bottom: var(--space-4);">We couldn't find the page you're looking for. It may have been moved or the URL might be incorrect.</p>
+        <div class="animate-slide-up delay-4" style="display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap;">
+          <a href="index.html" class="btn btn-primary"><i class="ph ph-house"></i> Return to Homepage</a>
+          <a href="contact.html" class="btn btn-outline"><i class="ph ph-chat-circle"></i> Contact Support</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Quick Links / Popular Destinations -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Popular Destinations</h2>
+          <p>Looking for something specific? Jump straight into our most visited resources.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card" style="text-align: left; align-items: flex-start;">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=600" alt="Checking Accounts visual">
+            <i class="ph ph-credit-card card-icon"></i>
+            <h3>Checking Accounts</h3>
+            <p>Explore high-limit checking with zero monthly fees and global ATM fee reimbursement.</p>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">Explore Checking</a>
+          </div>
+          <div class="card" style="text-align: left; align-items: flex-start;">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=600" alt="High-Yield Savings visual">
+            <i class="ph ph-wallet card-icon"></i>
+            <h3>High-Yield Savings</h3>
+            <p>Earn an industry-leading 4.50% APY with daily compounding and no lockups.</p>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">View Savings</a>
+          </div>
+          <div class="card" style="text-align: left; align-items: flex-start;">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" alt="Savings Calculator visual">
+            <i class="ph ph-calculator card-icon"></i>
+            <h3>Savings Calculator</h3>
+            <p>Project your future earnings and visualize compounding returns in real-time.</p>
+            <a href="calculator.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Support Hub -->
+    <section style="background: var(--surface-color);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Need Immediate Assistance?</h2>
+          <p>Our dedicated support specialists and automated help systems are available 24/7.</p>
+        </div>
+        <div class="card-grid card-grid-tight">
+          <div class="card">
+            <i class="ph ph-phone-call card-icon"></i>
+            <h3>24/7 Telephone Support</h3>
+            <p>Direct priority line for account inquiries, lost cards, or wire transfer support.</p>
+            <a href="tel:1-800-000-0000" class="btn btn-outline" style="width: 100%; margin-top: auto;">1-800-FIN-SERV</a>
+          </div>
+          <div class="card">
+            <i class="ph ph-chat-teardrop-dots card-icon"></i>
+            <h3>Secure In-App Chat</h3>
+            <p>Chat securely with a live financial specialist in under 60 seconds.</p>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">Start Live Chat</a>
+          </div>
+          <div class="card">
+            <i class="ph ph-shield-check card-icon"></i>
+            <h3>Fraud & Security Hotline</h3>
+            <p>Instant freeze tools and emergency reporting for unrecognized charges.</p>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%; margin-top: auto;">Security Center</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Live System Status & Trust -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>System Status & Reliability</h2>
+          <p>Real-time health of FINSERV core banking infrastructure.</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div style="color: var(--success-color); font-size: 1.75rem; margin-bottom: 8px;">
+              <i class="ph-fill ph-check-circle"></i>
+            </div>
+            <div style="font-weight: 600; font-size: 1.1rem; color: var(--text-primary);">All Systems Operational</div>
+            <div class="stat-label">99.99% Core Platform Uptime</div>
+          </div>
+          <div class="stat-card">
+            <div style="color: var(--success-color); font-size: 1.75rem; margin-bottom: 8px;">
+              <i class="ph-fill ph-shield-check"></i>
+            </div>
+            <div style="font-weight: 600; font-size: 1.1rem; color: var(--text-primary);">$250,000 FDIC Protected</div>
+            <div class="stat-label">Deposit Insurance Active</div>
+          </div>
+          <div class="stat-card">
+            <div style="color: var(--accent-color); font-size: 1.75rem; margin-bottom: 8px;">
+              <i class="ph-fill ph-lock-key"></i>
+            </div>
+            <div style="font-weight: 600; font-size: 1.1rem; color: var(--text-primary);">AES-256 Encryption</div>
+            <div class="stat-label">Zero-Trust Network Active</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand" style="margin-bottom: 16px;"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
+          <p style="font-size: 0.875rem;">Premium digital banking designed for the modern economy. Secure, fast, and transparent.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="FINSERV on X"><i class="ph-fill ph-x-logo"></i></a>
+            <a href="#" aria-label="FINSERV on LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="FINSERV on Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="FINSERV on YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="accounts.html">Checking</a>
+            <a href="accounts.html">Savings</a>
+            <a href="accounts.html">Business</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="calculator.html">Calculator</a>
+            <a href="#">Help Center</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FINSERV Digital Bank. All rights reserved.</p>
+        <p>*FINSERV is a placeholder financial services brand. Not a real financial institution. Demo content only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

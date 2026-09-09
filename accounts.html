@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounts | FINSERV</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i class="ph-fill ph-bank"></i> FINSERV<span>.</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="accounts.html" class="active">Accounts</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger" aria-label="Open Menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
+      <button class="close-drawer" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow animate-fade-in" style="justify-content: center;">Accounts</div>
+        <h1 class="animate-slide-up">Find the right <span class="text-gradient">account</span> for you</h1>
+        <p class="animate-slide-up delay-1">
+          Transparent fees, premium features, and complete control. Compare every plan side by side below.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <!-- Filter Bar -->
+        <div class="filter-bar animate-fade-in delay-2">
+          <button class="filter-btn active" data-filter="all">All Accounts</button>
+          <button class="filter-btn" data-filter="checking">Checking</button>
+          <button class="filter-btn" data-filter="savings">Savings</button>
+          <button class="filter-btn" data-filter="business">Business</button>
+        </div>
+
+        <div class="card-grid animate-slide-up delay-3">
+          <!-- Card 1 -->
+          <div class="card account-card" data-category="checking">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=600"
+              alt="Standard Checking visual">
+            <i class="ph ph-credit-card card-icon"></i>
+            <h3>Standard Checking</h3>
+            <p>Everyday spending with zero monthly maintenance fees.</p>
+            <ul class="account-features">
+              <li><i class="ph-fill ph-check-circle"></i> No minimum balance</li>
+              <li><i class="ph-fill ph-check-circle"></i> Free ATM withdrawals locally</li>
+              <li><i class="ph-fill ph-check-circle"></i> Digital debit card</li>
+            </ul>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: 16px;">View Details</a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card account-card" data-category="checking">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=600"
+              alt="Premium Checking visual">
+            <i class="ph ph-star card-icon"></i>
+            <h3>Premium Checking</h3>
+            <p>For high-volume spenders who travel globally.</p>
+            <ul class="account-features">
+              <li><i class="ph-fill ph-check-circle"></i> Global ATM fee reimbursement</li>
+              <li><i class="ph-fill ph-check-circle"></i> 1.5% cashback on all purchases</li>
+              <li><i class="ph-fill ph-check-circle"></i> Metal debit card included</li>
+            </ul>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: 16px;">View Details</a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card account-card" data-category="savings">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=600"
+              alt="High-Yield Savings visual">
+            <i class="ph ph-wallet card-icon"></i>
+            <h3>High-Yield Savings</h3>
+            <p>Make your idle cash work harder.</p>
+            <ul class="account-features">
+              <li><i class="ph-fill ph-check-circle"></i> 4.5% APY* on balances</li>
+              <li><i class="ph-fill ph-check-circle"></i> Daily compounded interest</li>
+              <li><i class="ph-fill ph-check-circle"></i> Auto-save rules & round-ups</li>
+            </ul>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: 16px;">View Details</a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card account-card" data-category="business">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"
+              alt="Business Essential visual">
+            <i class="ph ph-briefcase card-icon"></i>
+            <h3>Business Essential</h3>
+            <p>The foundation for your growing startup.</p>
+            <ul class="account-features">
+              <li><i class="ph-fill ph-check-circle"></i> Free electronic transfers</li>
+              <li><i class="ph-fill ph-check-circle"></i> Basic invoicing tools</li>
+              <li><i class="ph-fill ph-check-circle"></i> Export to accounting software</li>
+            </ul>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: 16px;">View Details</a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card account-card" data-category="business">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+              alt="Business Scale visual">
+            <i class="ph ph-buildings card-icon"></i>
+            <h3>Business Scale</h3>
+            <p>Advanced tools for established operations.</p>
+            <ul class="account-features">
+              <li><i class="ph-fill ph-check-circle"></i> Bulk payout API access</li>
+              <li><i class="ph-fill ph-check-circle"></i> Corporate team cards with limits</li>
+              <li><i class="ph-fill ph-check-circle"></i> Dedicated account manager</li>
+            </ul>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: 16px;">View Details</a>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card account-card" data-category="savings">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600"
+              alt="Growth Vault CD visual">
+            <i class="ph ph-vault card-icon"></i>
+            <h3>Growth Vault (CD)</h3>
+            <p>Lock in guaranteed high returns for fixed timeframes.</p>
+            <ul class="account-features">
+              <li><i class="ph-fill ph-check-circle"></i> 5.20% APY* on 12-month terms</li>
+              <li><i class="ph-fill ph-check-circle"></i> Guaranteed fixed yield</li>
+              <li><i class="ph-fill ph-check-circle"></i> Flexible auto-renewal options</li>
+            </ul>
+            <a href="accounts.html" class="btn btn-outline" style="width: 100%; margin-top: 16px;">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Comparison Matrix -->
+    <section style="background: var(--surface-color);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Compare Account Features</h2>
+          <p>Side-by-side comparison to help you choose the best fit.</p>
+        </div>
+
+        <div class="comparison-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature / Account</th>
+                <th>Standard Checking</th>
+                <th>Premium Checking</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Annual Percentage Yield (APY)</strong></td>
+                <td>0.05%</td>
+                <td class="highlight">0.15%</td>
+              </tr>
+              <tr>
+                <td><strong>Monthly Maintenance Fee</strong></td>
+                <td>$0</td>
+                <td>$0 (No min. req)</td>
+              </tr>
+              <tr>
+                <td><strong>ATM Fee Reimbursement</strong></td>
+                <td>In-Network Free</td>
+                <td class="highlight">Unlimited Worldwide</td>
+              </tr>
+              <tr>
+                <td><strong>Debit / Credit Card</strong></td>
+                <td>Digital Virtual Card</td>
+                <td class="highlight">Matte Black Metal Card</td>
+              </tr>
+              <tr>
+                <td><strong>FDIC Insurance Coverage</strong></td>
+                <td>Up to $250,000</td>
+                <td>Up to $250,000</td>
+              </tr>
+              <tr>
+                <td><strong>Cashback Rewards</strong></td>
+                <td>&mdash;</td>
+                <td class="highlight">1.5% on all spend</td>
+              </tr>
+              <tr>
+                <td><strong>API &amp; Accounting Sync</strong></td>
+                <td>Basic Export</td>
+                <td>Basic Export</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Account FAQ -->
+    <section style="background: var(--surface-color);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Everything you need to know about our personal and business accounts.</p>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>Is my money safe and FDIC insured?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>Yes. Your deposits are FDIC-insured up to $250,000 per depositor for each ownership category through
+                our network of partner banks. For business accounts, our extended sweep network protects balances up to
+                $2,000,000.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>Are there any hidden monthly or overdraft fees?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>No. We eliminated foreign transaction fees, account minimum penalties, and punitive overdraft fees. If
+                a transaction exceeds your balance, we simply decline it or cover small discrepancies up to $100 for
+                eligible members at zero charge.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>Can I open multiple sub-accounts or saving vaults?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>Absolutely. You can create unlimited dedicated sub-accounts with custom goals, automated transfer
+                rules, and independent tracking—all under a single login.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>How quickly can I access my funds after opening?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>Instantly. Your virtual debit card is issued immediately upon identity approval and can be added to
+                Apple Pay or Google Wallet in seconds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: CTA -->
+    <section>
+      <div class="container">
+        <div class="calc-result-panel" style="text-align: center; align-items: center;">
+          <div class="res-label">Next step</div>
+          <h2 style="color: #fff; max-width: 18ch; margin-inline: auto;">Ready to experience modern banking?</h2>
+          <p style="color: rgba(255,255,255,0.68); max-width: 46ch; margin: var(--space-2) auto var(--space-4);">
+            Choose the account that matches your ambition and open it in under 3 minutes.
+          </p>
+          <a href="register.html" class="btn btn-accent btn-lg">Get Started Today <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand" style="margin-bottom: 16px;"><i class="ph-fill ph-bank"></i>
+            FINSERV<span>.</span></a>
+          <p style="font-size: 0.875rem;">Premium digital banking designed for the modern economy. Secure, fast, and
+            transparent.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="FINSERV on X"><i class="ph-fill ph-x-logo"></i></a>
+            <a href="#" aria-label="FINSERV on LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="FINSERV on Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="FINSERV on YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="accounts.html">Checking</a>
+            <a href="accounts.html">Savings</a>
+            <a href="accounts.html">Business</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="calculator.html">Calculator</a>
+            <a href="#">Help Center</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FINSERV Digital Bank. All rights reserved.</p>
+        <p>*FINSERV is a placeholder financial services brand. Not a real financial institution. Demo content only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Navy Gradient Surface -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1128" />
+      <stop offset="50%" stop-color="#111c3a" />
+      <stop offset="100%" stop-color="#060c1d" />
+    </linearGradient>
+
+    <!-- Vibrant Teal Accent Gradient -->
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#2dd4bf" />
+    </linearGradient>
+
+    <!-- Warm Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="50%" stop-color="#b4893a" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="tealGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Icon Card -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" stroke="url(#tealGrad)" stroke-width="10" />
+
+  <!-- Inner Bank Logo Emblem -->
+  <g transform="translate(256, 245)">
+    <!-- Roof Triangular Pediment -->
+    <path d="M 0 -115 L -110 -45 L 110 -45 Z" fill="url(#tealGrad)" filter="url(#tealGlow)" />
+    
+    <!-- Top Apex Emblem Accent -->
+    <circle cx="0" cy="-130" r="14" fill="url(#goldGrad)" />
+
+    <!-- Architrave Beam -->
+    <rect x="-120" y="-35" width="240" height="16" rx="5" fill="#ffffff" opacity="0.95" />
+
+    <!-- Columns / Pillars -->
+    <rect x="-98" y="-8" width="28" height="96" rx="6" fill="url(#tealGrad)" />
+    <rect x="-37" y="-8" width="28" height="96" rx="6" fill="url(#tealGrad)" />
+    <rect x="9" y="-8" width="28" height="96" rx="6" fill="url(#tealGrad)" />
+    <rect x="70" y="-8" width="28" height="96" rx="6" fill="url(#tealGrad)" />
+
+    <!-- Base / Stylobate -->
+    <rect x="-124" y="98" width="248" height="20" rx="6" fill="url(#goldGrad)" />
+  </g>
+</svg>

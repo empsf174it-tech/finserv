@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FINSERV - Premium Digital Banking</title>
+  <meta name="description"
+    content="Experience seamless, secure, and modern digital banking with FINSERV. Manage your accounts, grow your wealth, and build your future.">
+  <meta name="theme-color" content="#0a1128">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Apply the saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- SEO JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "FINSERV Digital Bank",
+    "description": "Premium digital banking for modern professionals.",
+    "url": "https://finserv-placeholder.com"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i class="ph-fill ph-bank"></i> FINSERV<span>.</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger" aria-label="Open Menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
+      <button class="close-drawer" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="trust-badge animate-fade-in">
+              <i class="ph-fill ph-shield-check" style="color: var(--success-color)"></i>
+              AES-256 encrypted &middot; FDIC-style protection
+            </div>
+            <h1 class="animate-slide-up delay-1">
+              Banking designed for<br><span class="text-gradient">your momentum.</span>
+            </h1>
+            <p class="animate-slide-up delay-2">
+              A financial hub that moves as fast as you do. Zero hidden fees, high-yield growth,
+              and 24/7 premium support &mdash; all in one place.
+            </p>
+            <div class="hero-actions animate-slide-up delay-3">
+              <a href="register.html" class="btn btn-primary btn-lg">
+                Open an Account <i class="ph ph-arrow-right"></i>
+              </a>
+              <a href="calculator.html" class="btn btn-outline btn-lg">
+                <i class="ph ph-calculator"></i> Try the Calculator
+              </a>
+            </div>
+
+            <div class="hero-meta animate-fade-in delay-4">
+              <div class="hero-meta-item">
+                <div class="num" data-count-to="4.5" data-decimals="2" data-suffix="%">0%</div>
+                <span>APY on savings</span>
+              </div>
+              <div class="hero-meta-item">
+                <div class="num" data-count-to="2.4" data-decimals="1" data-prefix="$" data-suffix="B">$0B</div>
+                <span>Assets held</span>
+              </div>
+              <div class="hero-meta-item">
+                <div class="num" data-count-to="180" data-suffix="k+">0</div>
+                <span>Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive card visual -->
+          <div class="hero-visual animate-fade-in delay-3">
+            <div class="card-float">
+              <div class="credit-card" data-tilt>
+                <div class="cc-top">
+                  <div class="cc-brand"><i class="ph-fill ph-bank"></i> FINSERV</div>
+                  <i class="ph ph-wifi-high" style="font-size: 1.3rem; opacity: 0.75;"></i>
+                </div>
+                <div class="cc-chip"></div>
+                <div class="cc-number">4829 &nbsp;7710 &nbsp;0042 &nbsp;8815</div>
+                <div class="cc-bottom">
+                  <div>
+                    <span class="cc-label">Card Holder</span>
+                    <span class="cc-value">A. MORGAN</span>
+                  </div>
+                  <div>
+                    <span class="cc-label">Expires</span>
+                    <span class="cc-value">09/30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-chip float-chip-1">
+              <i class="ph-fill ph-trend-up" style="color: var(--success-color)"></i>
+              <div>
+                <strong class="num">+$1,284</strong>
+                <small>Interest this year</small>
+              </div>
+            </div>
+            <div class="float-chip float-chip-2">
+              <i class="ph-fill ph-lightning" style="color: var(--accent-color)"></i>
+              <div>
+                <strong>Instant</strong>
+                <small>Transfers, 24/7</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INTERACTIVE: Product explorer
+         ============================================================ -->
+    <section class="section-tint" id="explore">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Interactive preview</div>
+          <h2>Take FINSERV for a spin</h2>
+          <p>Pick an account below to see the live dashboard, recent activity, and monthly flow &mdash; no signup
+            required.</p>
+        </div>
+
+        <div class="showcase-shell">
+          <!-- Tabs -->
+          <div class="showcase-tabs" role="tablist" aria-label="Account types">
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-savings"
+              id="tab-savings" type="button">
+              <span class="tab-ico"><i class="ph-fill ph-piggy-bank"></i></span>
+              <span>
+                <strong>High-Yield Savings</strong>
+                <span>4.50% APY &middot; No minimum</span>
+              </span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-checking" id="tab-checking"
+              type="button" tabindex="-1">
+              <span class="tab-ico"><i class="ph-fill ph-credit-card"></i></span>
+              <span>
+                <strong>Premium Checking</strong>
+                <span>Global ATM rebates</span>
+              </span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-business" id="tab-business"
+              type="button" tabindex="-1">
+              <span class="tab-ico"><i class="ph-fill ph-briefcase"></i></span>
+              <span>
+                <strong>Business Account</strong>
+                <span>Invoicing &amp; bulk payouts</span>
+              </span>
+            </button>
+          </div>
+
+          <!-- Panels -->
+          <div class="showcase-panel">
+
+            <!-- Savings -->
+            <div class="panel active" role="tabpanel" id="panel-savings" aria-labelledby="tab-savings">
+              <div class="panel-head">
+                <div>
+                  <small>Total balance</small>
+                  <div class="panel-balance num" data-count-to="48250.75" data-decimals="2" data-prefix="$">$0.00</div>
+                </div>
+                <span class="pill pill-success"><i class="ph-fill ph-trend-up"></i> +4.50% APY</span>
+              </div>
+
+              <div class="spark" aria-hidden="true">
+                <div class="spark-bar" style="height: 42%" data-label="Mar &middot; $41.2k"></div>
+                <div class="spark-bar" style="height: 51%" data-label="Apr &middot; $42.6k"></div>
+                <div class="spark-bar" style="height: 47%" data-label="May &middot; $43.1k"></div>
+                <div class="spark-bar" style="height: 63%" data-label="Jun &middot; $44.8k"></div>
+                <div class="spark-bar" style="height: 71%" data-label="Jul &middot; $45.9k"></div>
+                <div class="spark-bar" style="height: 82%" data-label="Aug &middot; $47.0k"></div>
+                <div class="spark-bar" style="height: 100%" data-label="Sep &middot; $48.2k"></div>
+              </div>
+
+              <div class="txn-list">
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-percent"></i></span>
+                  <span class="txn-body"><strong>Monthly interest paid</strong><span>Sep 1 &middot;
+                      Auto-credited</span></span>
+                  <span class="txn-amt in">+$178.94</span>
+                </div>
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-arrows-clockwise"></i></span>
+                  <span class="txn-body"><strong>Auto-deposit from payroll</strong><span>Aug 28 &middot;
+                      Recurring</span></span>
+                  <span class="txn-amt in">+$1,500.00</span>
+                </div>
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-target"></i></span>
+                  <span class="txn-body"><strong>Goal: Home deposit</strong><span>68% funded &middot; On
+                      track</span></span>
+                  <span class="txn-amt in">+$400.00</span>
+                </div>
+              </div>
+
+              <div class="panel-feats">
+                <span class="pill pill-muted">Daily compounding</span>
+                <span class="pill pill-muted">No minimum balance</span>
+                <span class="pill pill-muted">Unlimited goals</span>
+              </div>
+            </div>
+
+            <!-- Checking -->
+            <div class="panel" role="tabpanel" id="panel-checking" aria-labelledby="tab-checking">
+              <div class="panel-head">
+                <div>
+                  <small>Available to spend</small>
+                  <div class="panel-balance num" data-count-to="7412.09" data-decimals="2" data-prefix="$">$0.00</div>
+                </div>
+                <span class="pill"><i class="ph-fill ph-globe-hemisphere-west"></i> $0 foreign fees</span>
+              </div>
+
+              <div class="spark" aria-hidden="true">
+                <div class="spark-bar" style="height: 78%" data-label="Mar &middot; $3.1k spent"></div>
+                <div class="spark-bar" style="height: 55%" data-label="Apr &middot; $2.2k spent"></div>
+                <div class="spark-bar" style="height: 92%" data-label="May &middot; $3.7k spent"></div>
+                <div class="spark-bar" style="height: 61%" data-label="Jun &middot; $2.4k spent"></div>
+                <div class="spark-bar" style="height: 44%" data-label="Jul &middot; $1.8k spent"></div>
+                <div class="spark-bar" style="height: 70%" data-label="Aug &middot; $2.8k spent"></div>
+                <div class="spark-bar" style="height: 38%" data-label="Sep &middot; $1.5k spent"></div>
+              </div>
+
+              <div class="txn-list">
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-airplane-takeoff"></i></span>
+                  <span class="txn-body"><strong>Skyline Airways</strong><span>Sep 4 &middot; Travel</span></span>
+                  <span class="txn-amt">-$428.60</span>
+                </div>
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-coffee"></i></span>
+                  <span class="txn-body"><strong>Meridian Coffee</strong><span>Sep 3 &middot; Dining</span></span>
+                  <span class="txn-amt">-$6.80</span>
+                </div>
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-receipt"></i></span>
+                  <span class="txn-body"><strong>ATM fee reimbursed</strong><span>Sep 2 &middot; Automatic</span></span>
+                  <span class="txn-amt in">+$4.50</span>
+                </div>
+              </div>
+
+              <div class="panel-feats">
+                <span class="pill pill-muted">ATM rebates worldwide</span>
+                <span class="pill pill-muted">Instant card freeze</span>
+                <span class="pill pill-muted">Smart budgets</span>
+              </div>
+            </div>
+
+            <!-- Business -->
+            <div class="panel" role="tabpanel" id="panel-business" aria-labelledby="tab-business">
+              <div class="panel-head">
+                <div>
+                  <small>Operating balance</small>
+                  <div class="panel-balance num" data-count-to="184920.00" data-decimals="2" data-prefix="$">$0.00</div>
+                </div>
+                <span class="pill"><i class="ph-fill ph-users-three"></i> 12 seats</span>
+              </div>
+
+              <div class="spark" aria-hidden="true">
+                <div class="spark-bar" style="height: 36%" data-label="Mar &middot; $96k in"></div>
+                <div class="spark-bar" style="height: 48%" data-label="Apr &middot; $118k in"></div>
+                <div class="spark-bar" style="height: 58%" data-label="May &middot; $132k in"></div>
+                <div class="spark-bar" style="height: 54%" data-label="Jun &middot; $127k in"></div>
+                <div class="spark-bar" style="height: 74%" data-label="Jul &middot; $154k in"></div>
+                <div class="spark-bar" style="height: 88%" data-label="Aug &middot; $171k in"></div>
+                <div class="spark-bar" style="height: 100%" data-label="Sep &middot; $185k in"></div>
+              </div>
+
+              <div class="txn-list">
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-file-text"></i></span>
+                  <span class="txn-body"><strong>Invoice #2291 settled</strong><span>Sep 5 &middot; Northwind
+                      Ltd.</span></span>
+                  <span class="txn-amt in">+$24,000.00</span>
+                </div>
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-users"></i></span>
+                  <span class="txn-body"><strong>Payroll run &mdash; 12 staff</strong><span>Sep 1 &middot; Bulk
+                      payout</span></span>
+                  <span class="txn-amt">-$52,400.00</span>
+                </div>
+                <div class="txn-row">
+                  <span class="txn-ico"><i class="ph-fill ph-cloud"></i></span>
+                  <span class="txn-body"><strong>Vendor subscriptions</strong><span>Sep 1 &middot; 8 cards</span></span>
+                  <span class="txn-amt">-$3,180.00</span>
+                </div>
+              </div>
+
+              <div class="panel-feats">
+                <span class="pill pill-muted">Automated invoicing</span>
+                <span class="pill pill-muted">Per-card limits</span>
+                <span class="pill pill-muted">Accounting sync</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offerings -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Products</div>
+          <h2>Financial products that perform</h2>
+          <p>Tailored solutions built to maximize your capital.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=600"
+              alt="High-Yield Savings visual" loading="lazy">
+            <i class="ph ph-wallet card-icon"></i>
+            <h3>High-Yield Savings</h3>
+            <p>Grow your wealth with up to 4.5% APY* and no minimum balance requirements.</p>
+            <a href="accounts.html" class="btn btn-outline btn-block">View Details</a>
+          </div>
+          <div class="card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=600"
+              alt="Premium Checking visual" loading="lazy">
+            <i class="ph ph-credit-card card-icon"></i>
+            <h3>Premium Checking</h3>
+            <p>Unlimited global ATM fee reimbursements and advanced budgeting tools.</p>
+            <a href="accounts.html" class="btn btn-outline btn-block">View Details</a>
+          </div>
+          <div class="card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"
+              alt="Business Accounts visual" loading="lazy">
+            <i class="ph ph-briefcase card-icon"></i>
+            <h3>Business Accounts</h3>
+            <p>Scale your operations with automated invoicing and bulk payment solutions.</p>
+            <a href="accounts.html" class="btn btn-outline btn-block">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust / Security -->
+    <section class="section-tint">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Security</div>
+          <h2>Uncompromising protection</h2>
+          <p>Your assets are protected by industry-leading protocols.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600"
+              alt="Bank-Level Encryption visual" loading="lazy">
+            <i class="ph ph-lock-key card-icon"></i>
+            <h3>Bank-Level Encryption</h3>
+            <p>AES-256 encryption ensures your data and transactions are never compromised.</p>
+          </div>
+          <div class="card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600"
+              alt="Biometric Auth visual" loading="lazy">
+            <i class="ph ph-fingerprint card-icon"></i>
+            <h3>Biometric Auth</h3>
+            <p>Securely access your accounts using FaceID or fingerprint recognition.</p>
+          </div>
+          <div class="card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=600"
+              alt="Real-Time Alerts visual" loading="lazy">
+            <i class="ph ph-bell-ringing card-icon"></i>
+            <h3>Real-Time Alerts</h3>
+            <p>Instant notifications for all account activity keep you informed 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Getting started</div>
+          <h2>Banking as fast as you move</h2>
+          <p>Get fully set up in less time than it takes to brew coffee.</p>
+        </div>
+        <div class="step-grid">
+          <div class="step-card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=600"
+              alt="Instant Signup visual" loading="lazy">
+            <div class="step-num">1</div>
+            <h3>Instant Signup</h3>
+            <p>Complete our secure 3-minute digital application with zero paperwork or branch visits.</p>
+          </div>
+          <div class="step-card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=600"
+              alt="Virtual Card Issued visual" loading="lazy">
+            <div class="step-num">2</div>
+            <h3>Virtual Card Issued</h3>
+            <p>Receive your digital card instantly. Add it to Apple Pay or Google Wallet right away.</p>
+          </div>
+          <div class="step-card">
+            <img class="card-img-top"
+              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=600"
+              alt="Watch Wealth Grow visual" loading="lazy">
+            <div class="step-num">3</div>
+            <h3>Watch Wealth Grow</h3>
+            <p>Earn daily compounded interest on savings and enjoy zero-fee global checking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-tint">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Client success</div>
+          <h2>Trusted by people who move fast</h2>
+          <p>Hear from the professionals who bank with FINSERV.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card quote-card">
+            <div class="quote-stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <p>"The transition was seamless. The app interface is incredibly clean, and I finally feel in control of my
+              wealth without the traditional banking headaches."</p>
+            <div class="quote-author">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=3.2&q=80&w=176&h=176"
+                alt="Client portrait" loading="lazy" class="quote-avatar">
+              <div>
+                <strong>Michael T.</strong>
+                <span>Tech Executive</span>
+              </div>
+            </div>
+          </div>
+          <div class="card quote-card">
+            <div class="quote-stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <p>"FINSERV's business accounts have saved my startup hours of administrative work. Their automated
+              invoicing and card permissions are a game changer."</p>
+            <div class="quote-author">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=3.2&q=80&w=176&h=176"
+                alt="Client portrait" loading="lazy" class="quote-avatar">
+              <div>
+                <strong>Sarah L.</strong>
+                <span>Startup Founder</span>
+              </div>
+            </div>
+          </div>
+          <div class="card quote-card">
+            <div class="quote-stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <p>"The 4.50% APY compounded daily has generated hundreds more in interest than my old bank ever gave me in
+              5 years. Total game changer."</p>
+            <div class="quote-author">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=3.2&q=80&w=176&h=176"
+                alt="Client portrait" loading="lazy" class="quote-avatar">
+              <div>
+                <strong>Alex K.</strong>
+                <span>Product Designer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container">
+        <div class="calc-result-panel" style="text-align: center; align-items: center;">
+          <div class="res-label">Get started</div>
+          <h2 style="color: #fff; max-width: 16ch; margin-inline: auto;">Ready to upgrade your banking?</h2>
+          <p style="color: rgba(255,255,255,0.68); max-width: 46ch; margin: var(--space-2) auto var(--space-4);">
+            Open an account in under 3 minutes. No branches, no paperwork, no minimum balance.
+          </p>
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="register.html" class="btn btn-accent btn-lg">Get Started Now <i class="ph ph-arrow-right"></i></a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand" style="margin-bottom: 16px;"><i class="ph-fill ph-bank"></i>
+            FINSERV<span>.</span></a>
+          <p style="font-size: 0.875rem; max-width: 34ch;">Premium digital banking designed for the modern economy.
+            Secure, fast, and transparent.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="FINSERV on X"><i class="ph-fill ph-x-logo"></i></a>
+            <a href="#" aria-label="FINSERV on LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="FINSERV on Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="FINSERV on YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="accounts.html">Checking</a>
+            <a href="accounts.html">Savings</a>
+            <a href="accounts.html">Business</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="calculator.html">Calculator</a>
+            <a href="#">Help Center</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FINSERV Digital Bank. All rights reserved.</p>
+        <p>*FINSERV is a placeholder financial services brand. Not a real financial institution. Demo content only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

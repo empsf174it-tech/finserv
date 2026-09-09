@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | FINSERV</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <main class="auth-wrapper animate-fade-in">
+    <div class="auth-topbar">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+    </div>
+
+    <div class="auth-card">
+      <a href="index.html" class="brand">
+        <i class="ph-fill ph-bank"></i> FINSERV<span>.</span>
+      </a>
+
+      <h1>Create account</h1>
+      <p class="auth-sub">Join the future of banking today.</p>
+
+      <form class="validate-form" novalidate>
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Alex Morgan" autocomplete="name" required>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" autocomplete="email" required>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="pw-field">
+            <input type="password" id="password" name="password" class="form-control" placeholder="At least 8 characters" autocomplete="new-password" required minlength="8">
+            <button type="button" class="pw-toggle" data-pw-toggle aria-label="Show password">
+              <i class="ph ph-eye"></i>
+            </button>
+          </div>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Confirm password</label>
+          <div class="pw-field">
+            <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Re-enter your password" autocomplete="new-password" required minlength="8">
+            <button type="button" class="pw-toggle" data-pw-toggle aria-label="Show password">
+              <i class="ph ph-eye"></i>
+            </button>
+          </div>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="auth-row">
+          <label class="checkbox-label" data-align="start">
+            <input type="checkbox" name="terms" required>
+            I agree to the Terms &amp; Privacy Policy.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Create my account</button>
+
+        <p class="auth-secure"><i class="ph-fill ph-lock-key"></i> Secured with 256-bit encryption</p>
+      </form>
+
+      <div class="auth-divider">or</div>
+
+      <div class="auth-btn-group">
+        <button type="button" class="btn btn-outline btn-block">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          Continue with Google
+        </button>
+        <button type="button" class="btn btn-outline btn-block">
+          <i class="ph-fill ph-apple-logo"></i> Continue with Apple
+        </button>
+      </div>
+
+      <p class="auth-foot">
+        Already have an account? <a href="login.html">Login here</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

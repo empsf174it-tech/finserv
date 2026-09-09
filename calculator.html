@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Calculator | FINSERV</title>
+  <meta name="description" content="Model your savings growth in real time. Adjust your deposit, monthly contribution, horizon and APY to see exactly how your money compounds.">
+  <meta name="theme-color" content="#0a1128">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i class="ph-fill ph-bank"></i> FINSERV<span>.</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="calculator.html" class="active">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger" aria-label="Open Menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
+      <button class="close-drawer" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow animate-fade-in" style="justify-content: center;">Wealth projection</div>
+        <h1 class="animate-slide-up">See your money <span class="text-gradient">grow</span></h1>
+        <p class="animate-slide-up delay-1">
+          Drag the sliders and watch the projection update instantly. Hover the chart to inspect any year.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INTERACTIVE CALCULATOR
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="calc-shell">
+
+          <!-- Controls -->
+          <div class="calc-panel">
+            <h3>Investment parameters</h3>
+            <p class="calc-sub">Everything recalculates as you drag &mdash; no submit button needed.</p>
+
+            <div style="margin-bottom: var(--space-4);">
+              <div class="ctrl-head"><label>Quick start</label></div>
+              <div class="chip-group">
+                <button type="button" class="chip" data-preset="1000,100,5">Starter</button>
+                <button type="button" class="chip" data-preset="10000,500,10">Steady saver</button>
+                <button type="button" class="chip" data-preset="50000,2000,25">Wealth builder</button>
+              </div>
+            </div>
+
+            <div class="ctrl">
+              <div class="ctrl-head">
+                <label for="initial-deposit">Initial deposit</label>
+                <output class="ctrl-val" id="initial-deposit-val" for="initial-deposit">$10,000</output>
+              </div>
+              <input type="range" class="range" id="initial-deposit" min="0" max="250000" step="500" value="10000" aria-label="Initial deposit in dollars">
+              <div class="ctrl-scale"><span>$0</span><span>$250k</span></div>
+            </div>
+
+            <div class="ctrl">
+              <div class="ctrl-head">
+                <label for="monthly-contribution">Monthly contribution</label>
+                <output class="ctrl-val" id="monthly-contribution-val" for="monthly-contribution">$500</output>
+              </div>
+              <input type="range" class="range" id="monthly-contribution" min="0" max="5000" step="25" value="500" aria-label="Monthly contribution in dollars">
+              <div class="ctrl-scale"><span>$0</span><span>$5,000</span></div>
+            </div>
+
+            <div class="ctrl">
+              <div class="ctrl-head">
+                <label for="years">Years to grow</label>
+                <output class="ctrl-val" id="years-val" for="years">10 years</output>
+              </div>
+              <input type="range" class="range" id="years" min="1" max="40" step="1" value="10" aria-label="Years to grow">
+              <div class="ctrl-scale"><span>1 yr</span><span>40 yrs</span></div>
+            </div>
+
+            <div class="ctrl">
+              <div class="ctrl-head"><label>Annual yield (APY)</label></div>
+              <div class="chip-group" role="group" aria-label="Annual percentage yield">
+                <button type="button" class="chip" data-apy="0.5" aria-pressed="false">0.50%</button>
+                <button type="button" class="chip" data-apy="2" aria-pressed="false">2.00%</button>
+                <button type="button" class="chip active" data-apy="4.5" aria-pressed="true">4.50% &middot; FINSERV</button>
+                <button type="button" class="chip" data-apy="6" aria-pressed="false">6.00%</button>
+              </div>
+            </div>
+
+            <p class="calc-note">
+              <strong>How this works:</strong> interest compounds monthly, with contributions made at the end of
+              each period. APY is variable and subject to change. FINSERV is a demo institution &mdash;
+              figures are illustrative only.
+            </p>
+          </div>
+
+          <!-- Live result -->
+          <div class="calc-result-panel">
+            <div class="res-label">Projected balance</div>
+            <div class="res-total" id="res-total">$0.00</div>
+            <div class="res-delta">
+              <i class="ph-fill ph-trend-up"></i>
+              <span id="res-delta-val">$0.00</span>&nbsp;earned in interest
+            </div>
+
+            <div class="chart-wrap">
+              <svg id="growth-chart" class="growth-chart" role="img" aria-label="Projected savings growth over time"></svg>
+              <div class="chart-tooltip" id="chart-tooltip"></div>
+            </div>
+
+            <div class="chart-legend">
+              <span><i class="lg-total"></i>Total balance</span>
+              <span><i class="lg-principal"></i>Your deposits</span>
+            </div>
+
+            <div class="split-bar" aria-hidden="true">
+              <div class="split-seg split-principal" id="split-principal" style="width: 76%"></div>
+              <div class="split-seg split-interest" id="split-interest" style="width: 24%"></div>
+            </div>
+
+            <div class="breakdown">
+              <div class="bd-item">
+                <small>You deposit</small>
+                <div class="num" id="bd-principal">$0.00</div>
+              </div>
+              <div class="bd-item">
+                <small>Interest earned</small>
+                <div class="num accent" id="bd-interest">$0.00</div>
+              </div>
+              <div class="bd-item">
+                <small>Return on deposits</small>
+                <div class="num" id="bd-effective">0%</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Live comparison — driven by the same sliders -->
+    <section class="section-tint">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">The cost of staying put</div>
+          <h2>Legacy bank vs. FINSERV</h2>
+          <p>Same deposits, same horizon &mdash; the only difference is the rate. These figures track your sliders above.</p>
+        </div>
+
+        <div class="calc-compare-grid">
+          <div class="compare-box">
+            <h3 style="color: var(--text-secondary);">Traditional big bank</h3>
+            <div class="compare-rate" style="color: var(--text-muted);">0.01% APY</div>
+            <p style="font-size: 0.875rem;">The average yield still offered by most brick-and-mortar institutions.</p>
+            <div style="margin-top: var(--space-3);">
+              <div class="compare-row">
+                <span>Total deposits (<span data-horizon>10 yrs</span>)</span>
+                <strong class="num" id="trad-deposits">$0.00</strong>
+              </div>
+              <div class="compare-row">
+                <span>Interest earned</span>
+                <strong class="num" id="trad-interest" style="color: var(--error-color);">$0.00</strong>
+              </div>
+              <div class="compare-row total">
+                <span>Final balance</span>
+                <strong class="num" id="trad-final">$0.00</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="compare-box featured">
+            <span class="compare-badge">FINSERV advantage</span>
+            <h3>FINSERV High-Yield</h3>
+            <div class="compare-rate" style="color: var(--accent-color);"><span id="fin-rate">4.50%</span> APY</div>
+            <p style="font-size: 0.875rem;">Compounded daily, paid out monthly straight to your cash balance.</p>
+            <div style="margin-top: var(--space-3);">
+              <div class="compare-row">
+                <span>Total deposits (<span data-horizon>10 yrs</span>)</span>
+                <strong class="num" id="fin-deposits">$0.00</strong>
+              </div>
+              <div class="compare-row">
+                <span>Interest earned</span>
+                <strong class="num" id="fin-interest" style="color: var(--success-color);">$0.00</strong>
+              </div>
+              <div class="compare-row total">
+                <span>Final balance</span>
+                <strong class="num" id="fin-final" style="color: var(--accent-color);">$0.00</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-4);">
+          <span class="pill pill-success" style="font-size: var(--fs-small); padding: 10px 18px;">
+            <i class="ph-fill ph-arrow-fat-line-up"></i>
+            You'd be <strong class="num" id="gap-amount">$0.00</strong>&nbsp;better off with FINSERV
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">FAQ</div>
+          <h2>Calculator &amp; compounding</h2>
+          <p>Common questions about how interest calculations and yields work.</p>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>What is the difference between APY and APR?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>APR (Annual Percentage Rate) reflects the simple annual rate without compounding. APY (Annual Percentage Yield) takes compounding frequency into account, giving you the accurate annual return on your savings.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>How often is interest compounded at FINSERV?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>At FINSERV, interest is calculated on your ledger balance daily and paid out on the last calendar day of every month. This calculator models monthly compounding, which tracks the payout schedule closely.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>Can I adjust my monthly contribution at any time?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>Yes. You can modify, pause, or increase your auto-transfer schedules directly in the FINSERV app with zero penalties or restrictions.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" type="button">
+              <span>Are savings earnings taxable?</span>
+              <i class="ph ph-caret-down accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>Yes, interest earned on savings accounts is treated as taxable income by federal and state tax authorities. FINSERV automatically prepares your annual 1099-INT statement for simplified filing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container">
+        <div class="calc-result-panel" style="text-align: center; align-items: center;">
+          <div class="res-label">Next step</div>
+          <h2 style="color: #fff; max-width: 18ch; margin-inline: auto;">Ready to put your calculations to work?</h2>
+          <p style="color: rgba(255,255,255,0.68); max-width: 46ch; margin: var(--space-2) auto var(--space-4);">
+            Open a High-Yield Savings account in under 3 minutes and start compounding today.
+          </p>
+          <a href="register.html" class="btn btn-accent btn-lg">Open an Account <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand" style="margin-bottom: 16px;"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
+          <p style="font-size: 0.875rem; max-width: 34ch;">Premium digital banking designed for the modern economy. Secure, fast, and transparent.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="FINSERV on X"><i class="ph-fill ph-x-logo"></i></a>
+            <a href="#" aria-label="FINSERV on LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="FINSERV on Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="FINSERV on YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="accounts.html">Checking</a>
+            <a href="accounts.html">Savings</a>
+            <a href="accounts.html">Business</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="calculator.html">Calculator</a>
+            <a href="#">Help Center</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FINSERV Digital Bank. All rights reserved.</p>
+        <p>*FINSERV is a placeholder financial services brand. Not a real financial institution. Demo content only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/calculator.js"></script>
+</body>
+</html>
