@@ -355,6 +355,8 @@
      --------------------------------------------------------------------- */
   const initForms = () => {
     const isEmail = v => /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(String(v).trim());
+    // Digits with the usual separators; needs at least 7 digits to pass.
+    const isPhone = v => /^[+]?[\d\s().-]{7,20}$/.test(String(v).trim()) && (String(v).match(/\d/g) || []).length >= 7;
 
     const checkField = input => {
       const group = input.closest('.form-group');
@@ -370,6 +372,7 @@
 
       if (!input.value.trim()) { setError('This field is required'); return false; }
       if (input.type === 'email' && !isEmail(input.value)) { setError('Please enter a valid email address'); return false; }
+      if (input.type === 'tel' && !isPhone(input.value)) { setError('Please enter a valid phone number'); return false; }
       if (input.type === 'password' && input.name === 'password' && input.value.length < 8) {
         setError('Password must be at least 8 characters'); return false;
       }
@@ -459,6 +462,33 @@
     });
   };
 
+
+  /* ---------------------------------------------------------------------
+     Back to top — injected so every page gets it without extra markup
+     --------------------------------------------------------------------- */
+  const initBackToTop = () => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<i class="ph-bold ph-arrow-up"></i>';
+    document.body.appendChild(btn);
+
+    let ticking = false;
+    const update = () => {
+      btn.classList.toggle('visible', window.scrollY > 500);
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  };
   /* --------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -473,6 +503,7 @@
     initAccordions();
     initForms();
     initPasswordToggles();
+    initBackToTop();
   });
 
   // Shared with calculator.js

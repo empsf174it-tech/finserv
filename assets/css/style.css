@@ -491,6 +491,8 @@ header.navbar.scrolled .nav-links a.active { box-shadow: var(--shadow-sm); }
   flex-direction: column;
   gap: var(--space-2);
 }
+/* Centre the theme toggle over the full-width Login button. */
+.drawer-footer .theme-toggle { align-self: center; }
 
 /* ==========================================================================
    Buttons
@@ -2368,3 +2370,132 @@ input[type="range"].range::-moz-range-thumb {
 .team-info { display: flex; flex-direction: column; flex: 1; }
 .team-info p { margin-bottom: 0; }
 .team-social { margin-top: auto; padding-top: var(--space-3); }
+
+/* Desktop product explorer: stack the tabs above the panel instead of the
+   side-by-side split, so the dashboard gets the full container width. */
+@media (min-width: 1025px) {
+  .showcase-shell {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    align-items: stretch;
+  }
+  .showcase-tabs {
+    flex-direction: row;
+    gap: var(--space-3);
+  }
+  .tab-btn { flex: 1; }
+  /* The sliding left bar and nudge read as a vertical list; in a top row the
+     accent border alone carries the active state. */
+  .tab-btn:hover, .tab-btn.active { transform: none; }
+  .tab-btn::after { content: none; }
+}
+
+/* Cap the story portrait on desktop too, so it stays in proportion with the
+   copy column instead of running the full height of its natural image. */
+@media (min-width: 769px) {
+  .story-image { height: 400px !important; object-position: center; }
+}
+
+
+/* ==========================================================================
+   Contact page - headquarters card
+   ========================================================================== */
+
+.contact-ico {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid var(--border-color);
+  color: var(--accent-color);
+  font-size: 1.05rem;
+}
+.contact-ico-lg { width: 52px; height: 52px; border-radius: 16px; font-size: 1.5rem; }
+
+/* The form card sets the visual weight on this column, so the info block
+   matches its surface, padding and border rather than sitting bare. */
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+.contact-info-card h3 { margin: 0; }
+.contact-address { margin: 0; line-height: 1.7; }
+
+.contact-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.contact-detail strong { color: var(--text-primary); font-size: var(--fs-small); }
+.contact-detail a {
+  color: var(--accent-color);
+  font-size: var(--fs-small);
+  word-break: break-word;
+}
+.contact-detail a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .contact-detail-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+}
+
+/* Form card heading keeps the icon inline beside the title. */
+.contact-heading { display: flex; align-items: center; gap: 12px; }
+
+/* ==========================================================================
+   Back to top
+   ========================================================================== */
+
+.back-to-top {
+  position: fixed;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  z-index: 90;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  background: var(--grad-accent);
+  color: #fff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  /* Parked out of reach until the page has scrolled, so it never steals a tap. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity var(--t-base), transform var(--t-base), visibility var(--t-base);
+}
+.back-to-top.visible { opacity: 1; visibility: visible; transform: none; }
+.back-to-top:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+@media (max-width: 480px) {
+  .back-to-top { width: 42px; height: 42px; right: var(--space-2); bottom: var(--space-2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: opacity var(--t-base); }
+  .back-to-top:hover { transform: none; }
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +20,11 @@
         if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
 </head>
+
 <body>
   <!-- Navbar -->
   <header class="navbar">
@@ -83,50 +85,65 @@
     <section>
       <div class="container contact-grid">
         <!-- Contact Form -->
-        <div class="animate-slide-up delay-2" style="background: var(--surface-color); padding: var(--space-6); border-radius: var(--radius); border: 1px solid var(--border-color); box-shadow: var(--shadow);">
+        <div class="animate-slide-up delay-2"
+          style="background: var(--surface-color); padding: var(--space-6); border-radius: var(--radius); border: 1px solid var(--border-color); box-shadow: var(--shadow);">
+          <h3 class="contact-heading">Send us a message</h3>
+          <p style="margin-bottom: var(--space-4);">Fill in the form and a support specialist will get back to you
+            within one business day.</p>
+
           <form class="validate-form" action="https://formspree.io/f/placeholder" method="POST" novalidate>
             <div class="form-group">
               <label for="name">Full Name</label>
               <input type="text" id="name" name="name" class="form-control" required>
               <span class="form-error"></span>
             </div>
-            
+
             <div class="form-group">
               <label for="email">Email Address</label>
               <input type="email" id="email" name="email" class="form-control" required>
               <span class="form-error"></span>
             </div>
-            
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 555 000 0000" required>
+              <span class="form-error"></span>
+            </div>
+
             <div class="form-group">
               <label for="subject">Subject</label>
               <input type="text" id="subject" name="subject" class="form-control" required>
               <span class="form-error"></span>
             </div>
-            
+
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" class="form-control" rows="5" required style="resize: vertical;"></textarea>
+              <textarea id="message" name="message" class="form-control" rows="5" required
+                style="resize: vertical;"></textarea>
               <span class="form-error"></span>
             </div>
-            
+
             <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
           </form>
         </div>
 
         <!-- Contact Info & Map -->
         <div class="animate-slide-up delay-3" style="display: flex; flex-direction: column; gap: var(--space-4);">
-          <div>
+          <div class="contact-info-card">
+            <i class="ph-fill ph-map-pin contact-ico contact-ico-lg"></i>
             <h3>Headquarters</h3>
-            <p>100 Financial District Blvd<br>Suite 4000<br>New York, NY 10005</p>
-            
-            <div style="display: flex; gap: var(--space-4); margin-top: var(--space-4);">
-              <div>
-                <strong style="display: block; color: var(--text-primary);">Phone Support</strong>
-                <a href="tel:1-800-000-0000" style="color: var(--accent-color);">1-800-FIN-SERV</a>
+            <p class="contact-address">100 Financial District Blvd<br>Suite 4000<br>New York, NY 10005</p>
+
+            <div class="contact-detail-grid">
+              <div class="contact-detail">
+                <i class="ph-fill ph-phone contact-ico"></i>
+                <strong>Phone Support</strong>
+                <a href="tel:1-800-000-0000">1-800-FIN-SERV</a>
               </div>
-              <div>
-                <strong style="display: block; color: var(--text-primary);">Email</strong>
-                <a href="mailto:support@finserv-placeholder.com" style="color: var(--accent-color);">support@finserv.com</a>
+              <div class="contact-detail">
+                <i class="ph-fill ph-envelope-simple contact-ico"></i>
+                <strong>Email</strong>
+                <a href="mailto:support@finserv-placeholder.com">support@finserv.com</a>
               </div>
             </div>
           </div>
@@ -138,7 +155,7 @@
               title="FINSERV headquarters on Google Maps" loading="lazy" allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          
+
           <div class="social-links">
             <a href="#" aria-label="FINSERV on X"><i class="ph-fill ph-x-logo"></i></a>
             <a href="#" aria-label="FINSERV on LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
@@ -155,8 +172,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="brand" style="margin-bottom: 16px;"><i class="ph-fill ph-bank"></i> FINSERV<span>.</span></a>
-          <p style="font-size: 0.875rem;">Premium digital banking designed for the modern economy. Secure, fast, and transparent.</p>
+          <a href="index.html" class="brand" style="margin-bottom: 16px;"><i class="ph-fill ph-bank"></i>
+            FINSERV<span>.</span></a>
+          <p style="font-size: 0.875rem;">Premium digital banking designed for the modern economy. Secure, fast, and
+            transparent.</p>
           <div class="footer-social">
             <a href="#" aria-label="FINSERV on X"><i class="ph-fill ph-x-logo"></i></a>
             <a href="#" aria-label="FINSERV on LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
@@ -198,4 +217,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
